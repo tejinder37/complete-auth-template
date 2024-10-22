@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import  Navbar  from "@/components/navbar";
 
 const font = Inter({
   subsets: ["latin"],
@@ -24,7 +25,8 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className={font.className}>
+        <body className={font.className} >
+          {/* <Navbar /> */}
           <Toaster />
           {children}
         </body>
