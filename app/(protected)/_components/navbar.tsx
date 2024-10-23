@@ -4,35 +4,40 @@ import { UserButton } from "@/components/auth/user-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FcSettings } from "react-icons/fc";
+import { PiFolderSimpleLock } from "react-icons/pi";
 
 export const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="bg-secondary flex justify-between items-center p-4 rounded-xl w-[600px] shadow-sm">
+    <div className="bg-white flex justify-between items-center p-4 w-full shadow-sm">
+      <div className="logo">
+        <Link href="/" className='text-[1.3rem] text-black font-semibold flex justify-start items-center gap-2'><PiFolderSimpleLock className='text-[1.8rem] text-blue-600' /> <span>Auth</span></Link>
+      </div>
       <div className="flex gap-x-2">
         <Button
           asChild
-          variant={pathname === "/server" ? "default" : "outline"}
+          variant={pathname === "/server" ? "secondary" : "ghost"}
         >
           <Link href="/server">Server</Link>
         </Button>
         <Button
           asChild
-          variant={pathname === "/client" ? "default" : "outline"}
+          variant={pathname === "/client" ? "secondary" : "ghost"}
         >
           <Link href="/client">Client</Link>
         </Button>
-        <Button asChild variant={pathname === "/admin" ? "default" : "outline"}>
+        <Button asChild variant={pathname === "/admin" ? "secondary" : "ghost"}>
           <Link href="/admin">Admin</Link>
         </Button>
-        <Button
-          asChild
-          variant={pathname === "/settings" ? "default" : "outline"}
-        >
-          <Link href="/settings">Settings</Link>
-        </Button>
+
       </div>
-      <UserButton />
+      <div className="flex gap-2">
+        <Link href="/settings" className="w-full inline-flex justify-start gap-2 items-center">
+          <FcSettings className="text-[2.2rem]" />
+        </Link>
+        <UserButton />
+      </div>
     </div>
   );
 };

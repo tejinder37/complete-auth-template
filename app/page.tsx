@@ -14,10 +14,10 @@ const font = Poppins({
 const Home = async () => {
   return (
     // style={{ backgroundImage: ` url(${bg.src})` }}
-    <main className="flex min-h-screen  bg-zinc-100 bg-no-repeat bg-center bg-cover  pt-12 pb-12 px-12">
-      <div  className="card rounded-[70px] w-full bg-zinc-300 flex flex-wrap justify-center items-center overflow-hidden">
-        <div className="lg:w-[45%] w-full lg:h-full h-fit">
-          <div className="h-full py-28 rounded-[70px] min-w-full bg-white flex flex-col justify-center items-center">
+    <main className="flex bg-zinc-100 bg-no-repeat bg-center bg-cover  lg:pt-12 lg:pb-12 lg:px-12">
+      <div  className="card lg:rounded-[70px] min-h-screen lg:min-h-[calc(100dvh_-_96px)] w-full bg-zinc-300 flex flex-wrap justify-center items-center overflow-hidden">
+        <div className="lg:w-[45%] w-fit lg:h-full h-fit">
+          <div className="h-full md:p-28 p-12 rounded-[70px] min-w-full bg-white flex flex-col justify-center items-center">
             <div className="space-y-6 text-center">
               <h1
                 className={cn(
@@ -38,8 +38,8 @@ const Home = async () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-[55%] w-full">
-          <div className="image w-full h-[600px]">
+        <div className="lg:w-[55%] w-full max-lg:hidden">
+          <div className="image w-full max:mdmax-h-[300px] h-full lg:h-[600px]">
             <Image src={card1} alt="Card1" className="h-full w-full object-contain" />
           </div>
         </div>

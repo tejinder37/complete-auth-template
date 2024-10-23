@@ -29,24 +29,26 @@ const AdminPage = () => {
     });
   };
   return (
-    <Card>
-      <CardHeader>
-        <p className="text-2xl font-semibold text-center">🗝️ Admin</p>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <RoleGate allowedRole={UserRole.ADMIN}>
-          <FormSuccess message="You are allowed to see this content" />
-        </RoleGate>
-        <div className="flex flex-row justify-between rounded-lg border p-3 shadow-md">
-          <p className="text-sm font-medium">Admin-Only API Route</p>
-          <Button onClick={onApiRouteClick}>Click to test</Button>
-        </div>
-        <div className="flex flex-row justify-between rounded-lg border p-3 shadow-md">
-          <p className="text-sm font-medium">Admin-Only Server Action</p>
-          <Button onClick={onServerActionClick}>Click to test</Button>
-        </div>
-      </CardContent>
-    </Card>
+
+
+<Card className="rounded-none border-none w-full shadow-none">
+<CardHeader>
+  <p className="text-2xl font-semibold text-center">🗝️ Admin</p>
+</CardHeader>
+<CardContent className="space-y-4">
+  <RoleGate allowedRole={UserRole.ADMIN}>
+    <FormSuccess message="You are allowed to see this content" />
+  </RoleGate>
+  <div className="flex flex-row justify-between rounded-lg border p-3 shadow-md">
+    <p className="text-sm font-medium">Admin-Only API Route</p>
+    <Button onClick={onApiRouteClick}>Click to test</Button>
+  </div>
+  <div className="flex flex-row justify-between rounded-lg border p-3 shadow-md">
+    <p className="text-sm font-medium">Admin-Only Server Action</p>
+    <Button onClick={onServerActionClick}>Click to test</Button>
+  </div>
+</CardContent>
+</Card>
   );
 };
 
