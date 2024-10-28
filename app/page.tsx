@@ -15,9 +15,9 @@ const Home = async () => {
   return (
     // style={{ backgroundImage: ` url(${bg.src})` }}
     <main className="flex bg-zinc-100 bg-no-repeat bg-center bg-cover  lg:pt-12 lg:pb-12 lg:px-12">
-      <div  className="card lg:rounded-[70px] min-h-screen lg:min-h-[calc(100dvh_-_96px)] w-full bg-zinc-300 flex flex-wrap justify-center items-center overflow-hidden">
+      <div className="card lg:rounded-[70px] min-h-screen lg:min-h-[calc(100dvh_-_96px)] w-full bg-zinc-300 flex flex-wrap justify-center items-center overflow-hidden">
         <div className="lg:w-[45%] w-fit lg:h-full h-fit">
-          <div className="h-full md:p-28 p-12 rounded-[70px] min-w-full bg-white flex flex-col justify-center items-center">
+          <div className="h-full md:p-28 p-12 rounded-[30px] lg:rounded-[70px] min-w-full bg-white flex flex-col justify-center items-center">
             <div className="space-y-6 text-center">
               <h1
                 className={cn(
@@ -25,11 +25,11 @@ const Home = async () => {
                   font.className
                 )}
               >
-                <FcLockPortrait  /> <span>Auth</span>
+                <FcLockPortrait /> <span>Auth</span>
               </h1>
               <p className="text-lg">A simple authentication service</p>
               <div>
-                <LoginButton>
+                <LoginButton mode="modal" asChild>
                   <Button variant="secondary" size="lg">
                     Sign in
                   </Button>
